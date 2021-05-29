@@ -1,0 +1,14 @@
+{
+  "name": "thaipost-api",
+  "version": "1.0.0",
+  "description": "Thailand Post Tracking API By ChokunPlayZ",
+  "main": "index.js",
+  "scripts": {
+    "thaipost-api": "node index.js && exit 0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
