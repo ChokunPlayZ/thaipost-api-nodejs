@@ -1,7 +1,7 @@
 const axios = require('axios')
 
-var thaiposttoken = 'Z1QwC5NIRIW?S7WRMGIDPWXcL#S*JJOUAVAtCHR2BMH9WRJnK*SRQ8AOB;ZvFGVsQ$M#WsFEOwP=Z2PCCYK+PxO+CSAVIIHEMkKV'
-var trackingcode = '6789OB073054764TH'
+var thaiposttoken = 'Token Here'
+var trackingcode = 'Tracking Nimber Here'
 
 axios
   .post('https://trackapi.thailandpost.co.th/post/api/v1/authenticate/token', {} , {
