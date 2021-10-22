@@ -1,37 +1,9 @@
-const axios = require('axios')
+const axios = require('axios');
+const thaipost = require('./lib/thaipost.js');
 
-var thaiposttoken = 'Token Here'
+var thaiposttoken = 'sssZ1QwC5NIRIW?S7WRMGIDPWXcL#S*JJOUAVAtCHR2BMH9WRJnK*SRQ8AOB;ZvFGVsQ$M#WsFEOwP=Z2PCCYK+PxO+CSAVIIHEMkKV'
 var trackingcode = 'Tracking Nimber Here'
 
-axios
-  .post('https://trackapi.thailandpost.co.th/post/api/v1/authenticate/token', {} , {
-      headers: {
-          'Authorization': 'Token ' + thaiposttoken,
-          'Content-Type': 'application/json'
-      }
-    })
-  .then(res => {
-      //start second axios instense
-    axios.post('https://trackapi.thailandpost.co.th/post/api/v1/track', {
-        "status": "all",
-        "language": "TH",
-        "barcode": [trackingcode]
-    } , {
-        headers: {
-            'Authorization': 'Token ' + res.data.token,
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(res => {
-      //Code Here
-    console.log(res.data.response.items[trackingcode])
-    })
-    .catch(error => {
-    console.error(error)
-    })
-    // end new axios instence
-  })
-  .catch(error => {
-    console.error(error)
-  })
-
+thaipost.getPackage(thaiposttoken, trackingcode).then((package) => {
+  console.log(package);
+})
