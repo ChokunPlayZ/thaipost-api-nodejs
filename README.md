@@ -13,7 +13,8 @@ API ติดตามพัสดุ ไปรษณีย์ไทย Node JS
 ## การ import เข้าโปรเจก
  1. ลากโฟล์ thaipost.js เข้าไปในโปรเจก nodejs (แนะนำเก็นใว้ในโฟลเดอร์ lib)
  2. เพิ่มโคตนี้เข้าไปที่ index.js หรือไฟล์ที่จะใช้
-        ```const thaipost = require('./lib/thaipost.js');```
+```const thaipost = require('./lib/thaipost.js');```
+NOTE: ตรง `./lib/thaipost.js` ต้องเป็นที่อยู่ของไฟล์ 
  3. ใช้โคตต่อไปนี้เพื่อเรียก Function มาใช้
 ```
 thaipost.getPackage("โทเคน", "เลขพัสดุ").then((package) => {
@@ -21,6 +22,13 @@ thaipost.getPackage("โทเคน", "เลขพัสดุ").then((package
     // ข้อมูลจะเป็นรูปแบบ json แบบ parse แล้ว
     // สามารถนำมาใช้ได้ทันที ไม่ต้อง parse อีกรอบ
 })
+```
+หรือถ้านะไปรันใน function ที่เป็น async
+```
+cosnt package = await thaipost.getPackage("โทเคน", "เลขพัสดุ")
+console.log(package);
+// ข้อมูลจะเป็นรูปแบบ json แบบ parse แล้ว
+// สามารถนำมาใช้ได้ทันที ไม่ต้อง parse อีกรอบ
 ```
  4. Good Luck !
 
