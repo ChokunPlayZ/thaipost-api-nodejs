@@ -21,11 +21,11 @@ thaipost.getPackage("โทเคน", "เลขพัสดุ").then((package
     console.log(package);
     // ข้อมูลจะเป็นรูปแบบ json แบบ parse แล้ว
     // สามารถนำมาใช้ได้ทันที ไม่ต้อง parse อีกรอบ
-})
+});
 ```
 หรือถ้านะไปรันใน function ที่เป็น async
 ```
-cosnt package = await thaipost.getPackage("โทเคน", "เลขพัสดุ")
+cosnt package = await thaipost.getPackage("โทเคน", "เลขพัสดุ");
 console.log(package);
 // ข้อมูลจะเป็นรูปแบบ json แบบ parse แล้ว
 // สามารถนำมาใช้ได้ทันที ไม่ต้อง parse อีกรอบ
